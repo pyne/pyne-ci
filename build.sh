@@ -16,7 +16,7 @@ make install
 cd ..
 
 cd moab
-autoreconf -fi
+../install/bin/autoreconf -fi
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
 make install
