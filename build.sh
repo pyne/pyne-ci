@@ -9,6 +9,12 @@ make
 make install
 cd ..
 
+cd autoconf
+./configure --prefix=`pwd`/../install 
+make
+make install
+cd ..
+
 cd moab
 autoreconf -fi
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install

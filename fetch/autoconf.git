@@ -1,0 +1,3 @@
+method = git
+git_repo = git://git.sv.gnu.org/autoconf
+git_path = autoconf
