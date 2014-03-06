@@ -23,6 +23,7 @@ echo $PATH
 export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH
 export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/../install/lib/python2.7/site-packages/pyne/lib:$DYLD_FALLBACK_LIBRARY_PATH
 export C_INCLUDE_PATH=`pwd`/install/include:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
