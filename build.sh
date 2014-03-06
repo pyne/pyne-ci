@@ -9,7 +9,7 @@ make
 make install
 cd ..
 
-cd autoconf
+cd autoconf-2.69
 ./configure --prefix=`pwd`/../install 
 make
 make install
