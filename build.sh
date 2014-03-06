@@ -2,14 +2,14 @@ set -x
 set -e
 
 cd hdf5-1.8.4
-./configure --prefix=`pwd`/../install
+./configure --prefix=`pwd`/../install --enable-shared 
 make
 make install
 cd ..
 
 cd moab
 autoreconf -fi
-./configure --prefix=`pwd`/../install
+./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
 make install
 cd ..
@@ -33,4 +33,3 @@ cd ../pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 
 exit $?
-
