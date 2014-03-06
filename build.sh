@@ -15,8 +15,18 @@ make
 make install
 cd ..
 
+cd automake-1.14
+./configure --prefix=`pwd`/../install 
+make
+make install
+cd ..
+
 cd moab
-../install/bin/autoreconf -fi
+../install/bin/autoheader
+../install/bin/aclocal -I m4
+libtoolize -f
+../install/bin/autoconf
+../install/bin/automake -a
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
 make install
