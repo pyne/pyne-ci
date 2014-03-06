@@ -39,5 +39,8 @@ python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 
 cd ../pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+cd scripts
+nuc_data_make
 
+cd ../..
 exit $?
