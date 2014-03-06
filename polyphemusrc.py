@@ -22,7 +22,7 @@ batlab_scripts_url = 'https://github.com/pyne/pyne-ci.git'
 # the fetch file, will be overwritten with pull request location
 batlab_fetch_file = 'fetch/pyne.git'
 # top-level run specification
-batlab_run_spec = 'cycamore.fast.run-spec'
+batlab_run_spec = 'pyne.fast.run-spec'
 # Optional custom batlab submission command
 #batlab_submit_cmd = './submit.sh'
 
