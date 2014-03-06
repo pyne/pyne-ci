@@ -1,6 +1,12 @@
 set -x
 set -e
 
+cd hdf5-1.8.4
+./configure --prefix=`pwd`/../install
+make -j
+make install
+cd ..
+
 mkdir -p `pwd`/install/lib/python2.7/site-packages
 export PYTHONPATH=$PYTHONPATH:`pwd`/install:`pwd`/install/lib/python2.7/site-packages
 cd nose
