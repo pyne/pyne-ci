@@ -23,6 +23,7 @@ cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 
 cd scripts
+env
 nuc_data_make
 
 cd ../..
