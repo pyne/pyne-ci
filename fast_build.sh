@@ -16,9 +16,11 @@ elif [[ $platform == 'darwin' ]]; then
     tar -xzf mac.tar.gz
 fi
 
+ls -R install
+
 export PATH=`pwd`/install/bin:$PATH
 echo $PATH
-export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH:`pwd`/install
+export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH
 export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/../install/lib/python2.7/site-packages/pyne/lib:$DYLD_FALLBACK_LIBRARY_PATH
 
 cd pyne
