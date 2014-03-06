@@ -1,0 +1,9 @@
+run_type    = test
+inputs      = fetch/nose.git,fetch/numpy.git,fetch/pytables.git,fetch/numexpr.hg,fetch/cython.git,fetch/pyne.git
+x86_64_MacOSX8_remote_pre_declare = build.sh
+x86_64_Ubuntu12_remote_pre_declare = build.sh
+remote_task = run_test.sh
+platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
+project     = <a href="http://pyne.io/">PyNE</a>
+project_version = staging
+description = Builds/Unit tests pyne[staging]
