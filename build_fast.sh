@@ -9,9 +9,9 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='darwin'
 fi
 if [[ $platform == 'linux' ]]; then
-    tar -xzf ubuntu.fast.tar.gz
+    tar -xzf ubuntu.tar.gz
 elif [[ $platform == 'darwin' ]]; then
-    tar -xzf mac.fast.tar.gz
+    tar -xzf mac.tar.gz
 fi
 
 export PATH=`pwd`/install/bin:$PATH
