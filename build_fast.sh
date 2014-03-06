@@ -17,7 +17,7 @@ fi
 export PATH=`pwd`/install/bin:$PATH
 echo $PATH
 export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH:`pwd`/install
-export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/../install/lib/python2.7/site-packages:$DYLD_FALLBACK_LIBRARY_PATH
+export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/../install/lib/python2.7/site-packages/pyne/lib:$DYLD_FALLBACK_LIBRARY_PATH
 
 cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
