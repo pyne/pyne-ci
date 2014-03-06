@@ -1,5 +1,5 @@
 run_type    = test
-inputs      = fetch/pyne-ci.git,fetch/nose.git,fetch/numpy.git,fetch/pytables.git,fetch/numexpr.hg,fetch/cython.git,fetch/pyne.git,fetch/moab.git,fetc/scipy.git,fetch/hdf5.url
+inputs      = fetch/pyne-ci.git,fetch/nose.git,fetch/numpy.git,fetch/pytables.git,fetch/numexpr.hg,fetch/cython.git,fetch/pyne.git,fetch/moab.git,fetch/scipy.git,fetch/hdf5.url
 x86_64_MacOSX8_remote_pre_declare = build.sh
 x86_64_Ubuntu12_remote_pre_declare = build.sh
 remote_task = run_test.sh
