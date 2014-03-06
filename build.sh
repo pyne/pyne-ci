@@ -62,8 +62,14 @@ python setup.py install --prefix=`pwd`/../install
 cd ../PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 
-cd ../pyne
+
+cd ..
+tar -zcvf install.tar.gz install
+
+cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:`pwd`/../install/lib/python2.7/site-packages
+
 cd scripts
 nuc_data_make
 
