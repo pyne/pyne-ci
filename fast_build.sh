@@ -9,8 +9,10 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='darwin'
 fi
 if [[ $platform == 'linux' ]]; then
+    echo "In linux, untaring ubuntu.tar.gz"
     tar -xzf ubuntu.tar.gz
 elif [[ $platform == 'darwin' ]]; then
+    echo "In darwin, untaring mac.tar.gz"
     tar -xzf mac.tar.gz
 fi
 
