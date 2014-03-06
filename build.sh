@@ -1,6 +1,8 @@
 set -x
 set -e
 
+libtool --finish `pwd`/install/lib
+
 cd hdf5-1.8.4
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
