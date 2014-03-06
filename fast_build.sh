@@ -16,8 +16,6 @@ elif [[ $platform == 'darwin' ]]; then
     tar -xzf mac.tar.gz
 fi
 
-ls -R install
-
 export PATH=`pwd`/install/bin:$PATH
 echo $PATH
 export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH
