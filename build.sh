@@ -12,24 +12,36 @@ make
 make install
 cd ..
 
-cd autoconf-2.69
-./configure --prefix=`pwd`/../install 
-make
-make install
-cd ..
+# cd autoconf-2.69
+# ./configure --prefix=`pwd`/../install 
+# make
+# make install
+# cd ..
 
-cd automake-1.14
-./configure --prefix=`pwd`/../install 
-make
-make install
-cd ..
+# cd automake-1.14
+# ./configure --prefix=`pwd`/../install 
+# make
+# make install
+# cd ..
 
-cd moab
-../install/bin/autoheader
-../install/bin/aclocal -I m4
-libtoolize -f
-../install/bin/autoconf
-../install/bin/automake -a
+# cd libtool-2.4
+# ./configure --prefix=`pwd`/../install 
+# make
+# make install
+# cd ..
+
+# cd moab
+# ../install/bin/autoheader
+# ../install/bin/aclocal -I m4
+# ../install/bin/libtoolize -f
+# ../install/bin/autoconf
+# ../install/bin/automake -a
+# ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
+# make
+# make install
+# cd ..
+
+cd moab-4.6.2
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
 make install
