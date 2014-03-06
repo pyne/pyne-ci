@@ -1,8 +1,12 @@
 set -x
 set -e
 
-export PATH=$PATH:`pwd`/install/bin
+mkdir -p `pwd`/install/lib/python2.7/site-packages
+
+export PATH=`pwd`/install/bin:$PATH
 echo $PATH
+export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH:`pwd`/install
+export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/../install/lib/python2.7/site-packages:$DYLD_FALLBACK_LIBRARY_PATH
 
 cd hdf5-1.8.4
 ./configure --prefix=`pwd`/../install --enable-shared 
@@ -16,8 +20,6 @@ make
 make install
 cd ..
 
-mkdir -p `pwd`/install/lib/python2.7/site-packages
-export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH:`pwd`/install
 cd nose
 python setup.py install --prefix=`pwd`/../install
 cd ../numpy
@@ -36,7 +38,6 @@ tar -zcvf results.tar.gz install
 
 cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
-export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:`pwd`/../install/lib/python2.7/site-packages
 
 cd scripts
 nuc_data_make

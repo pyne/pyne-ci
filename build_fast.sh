@@ -14,12 +14,13 @@ elif [[ $platform == 'darwin' ]]; then
     tar -xzf mac.fast.tar.gz
 fi
 
-export PATH=$PATH:`pwd`/install/bin
+export PATH=`pwd`/install/bin:$PATH
 echo $PATH
+export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH:`pwd`/install
+export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/../install/lib/python2.7/site-packages:$DYLD_FALLBACK_LIBRARY_PATH
 
 cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
-export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:`pwd`/../install/lib/python2.7/site-packages
 
 cd scripts
 nuc_data_make
