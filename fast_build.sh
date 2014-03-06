@@ -22,11 +22,11 @@ export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH
 export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/install/lib/python2.7/site-packages/pyne/lib:$DYLD_FALLBACK_LIBRARY_PATH
 export C_INCLUDE_PATH=`pwd`/install/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
-export LIBRARY_PATH=`pwd`/install/lib:`pwd`/install/moab/lib:$LIBRARY_PATH
-export LD_LIBRARY_PATH=`pwd`/install/lib:`pwd`/install/moab/lib:$LD_LIBRARY_PATH
+export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
 cd pyne
-python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include
+python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
 
 cd scripts
 env
