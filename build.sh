@@ -3,7 +3,7 @@ set -e
 
 #libtool --finish `pwd`/install/lib
 
-export PATH=$PATH:`pwd`/../install
+export PATH=$PATH:`pwd`/install/bin
 echo $PATH
 
 cd hdf5-1.8.4
@@ -17,9 +17,6 @@ cd autoconf-2.69
 make
 make install
 cd ..
-
-export PATH=$PATH:`pwd`/install/bin
-echo $PATH
 
 cd automake-1.14
 ./configure --prefix=`pwd`/../install 
