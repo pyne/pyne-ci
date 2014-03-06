@@ -3,7 +3,14 @@ set -e
 
 cd hdf5-1.8.4
 ./configure --prefix=`pwd`/../install
-make -j
+make
+make install
+cd ..
+
+cd moab
+autoreconf -fi
+./configure --prefix=`pwd`/../install
+make
 make install
 cd ..
 
@@ -21,13 +28,6 @@ cd ../numexpr
 python setup.py install --prefix=`pwd`/../install
 cd ../PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
-
-cd moab
-autoreconf -fi
-./configure --prefix=`pwd`/../install
-make -j
-make install
-cd ..
 
 cd ../pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
