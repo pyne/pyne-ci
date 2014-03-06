@@ -18,6 +18,9 @@ make
 make install
 cd ..
 
+export PATH=$PATH:`pwd`/install/bin
+echo $PATH
+
 cd automake-1.14
 ./configure --prefix=`pwd`/../install 
 make
