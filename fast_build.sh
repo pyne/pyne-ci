@@ -26,7 +26,7 @@ export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
 cd pyne
-python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install/lib -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
+python setup.py install --prefix=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib -DHDF5_ROOT=`pwd`/../install
 
 cd scripts
 env
