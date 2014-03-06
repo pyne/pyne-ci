@@ -21,6 +21,14 @@ cd ../numexpr
 python setup.py install --prefix=`pwd`/../install
 cd ../PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+
+cd moab
+autoreconf -fi
+./configure --prefix=`pwd`/../install
+make -j
+make install
+cd ..
+
 cd ../pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 

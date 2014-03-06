@@ -1,0 +1,3 @@
+method = git
+git_repo = https://bitbucket.org/fathomteam/moab.git
+git_path = moab
