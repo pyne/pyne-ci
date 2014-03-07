@@ -24,7 +24,6 @@ make
 make install
 cd ..
 
-cd ..
 tar -pczf results.tar.gz install
 
 cd nose
