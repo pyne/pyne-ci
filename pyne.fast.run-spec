@@ -5,5 +5,5 @@ x86_64_Ubuntu12_remote_pre_declare = fast_build.sh
 remote_task = run_test.sh
 platforms   = x86_64_Ubuntu12,x86_64_MacOSX8,
 project     = <a href="http://pyne.io/">PyNE</a>
-project_version = fast_staging
+project_version = staging (fast)
 description = Builds/Unit tests pyne[staging]
