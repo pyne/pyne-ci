@@ -26,13 +26,13 @@ export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
 python get-pip.py --root `pwd`/install
-#ls -R `pwd`/install
+ls -R `pwd`/install
 
-pip install --root `pwd`/install nose
-pip install --root `pwd`/install numpy
-pip install --root `pwd`/install cython
-pip install --root `pwd`/install scipy
-pip install --root `pwd`/install numexpr
+`pwd`/install/usr/local/bin/pip install --root `pwd`/install nose
+`pwd`/install/usr/local/bin/pip install --root `pwd`/install numpy
+`pwd`/install/usr/local/bin/pip install --root `pwd`/install cython
+`pwd`/install/usr/local/bin/pip install --root `pwd`/install scipy
+`pwd`/install/usr/local/bin/pip install --root `pwd`/install numexpr
 # cd nose
 # python setup.py install --prefix=`pwd`/../install
 # cd ../numpy
