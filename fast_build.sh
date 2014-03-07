@@ -16,6 +16,8 @@ elif [[ $platform == 'darwin' ]]; then
     tar -xzf mac.tar.gz
 fi
 
+
+
 export PATH=`pwd`/install/bin:`pwd`/install/usr/local/bin:$PATH
 echo $PATH
 export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:`pwd`/install/usr/local/lib/python2.7/site-packages:$PYTHONPATH
@@ -28,11 +30,11 @@ export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 python get-pip.py --root `pwd`/install
 ls -R `pwd`/install
 
-`pwd`/install/usr/local/bin/pip install --root `pwd`/install nose
-`pwd`/install/usr/local/bin/pip install --root `pwd`/install numpy
-`pwd`/install/usr/local/bin/pip install --root `pwd`/install cython
-`pwd`/install/usr/local/bin/pip install --root `pwd`/install scipy
-`pwd`/install/usr/local/bin/pip install --root `pwd`/install numexpr
+`pwd`/install/Library/Frameworks/Python.framework/Versions/2.7/bin/pip --root `pwd`/install nose
+`pwd`/install/Library/Frameworks/Python.framework/Versions/2.7/bin/pip install --root `pwd`/install numpy
+`pwd`/install/Library/Frameworks/Python.framework/Versions/2.7/bin/pip install --root `pwd`/install cython
+`pwd`/install/Library/Frameworks/Python.framework/Versions/2.7/bin/pip install --root `pwd`/install scipy
+`pwd`/install/Library/Frameworks/Python.framework/Versions/2.7/bin/pip install --root `pwd`/install numexpr
 # cd nose
 # python setup.py install --prefix=`pwd`/../install
 # cd ../numpy
