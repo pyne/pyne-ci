@@ -38,6 +38,7 @@ cd ../numexpr
 python setup.py install --prefix=`pwd`/../install
 cd ../PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+cd ..
 
 cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
