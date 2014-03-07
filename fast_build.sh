@@ -43,8 +43,9 @@ ls -R `pwd`/install
 # python setup.py install --prefix=`pwd`/../install
 # cd ../numexpr
 # python setup.py install --prefix=`pwd`/../install
-cd ../PyTables
+cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+cd ..
 
 cd pyne
 echo "pwd and env"
