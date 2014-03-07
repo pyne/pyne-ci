@@ -29,7 +29,6 @@ cd pyne
 echo "pwd and env"
 echo $PWD
 env
-find -exec touch \{\} \;
 python setup.py install --prefix=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib -DHDF5_ROOT=`pwd`/../install
 
 cd scripts
