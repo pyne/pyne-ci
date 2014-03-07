@@ -26,6 +26,7 @@ export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
 python get-pip.py --root `pwd`/install
+ls -R `pwd`/install
 
 pip install --root `pwd`/../install nose
 pip install --root `pwd`/../install numpy

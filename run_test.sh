@@ -7,6 +7,6 @@ export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH:`pwd`/in
 export LD_LIBRARY_PATH=`pwd`/install/lib/:$LD_LIBRARY_PATH
 export PATH=$PATH:`pwd`/install/bin
 
-../../install/bin/nosetests -w tests
+./install/bin/nosetests -w tests
 
 exit $?
