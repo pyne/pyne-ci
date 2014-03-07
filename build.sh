@@ -29,27 +29,27 @@ python setup.py install --prefix=`pwd`/../install
 cd ..
 
 cd numpy
-python setup.py ../install --prefix=`pwd`/../install
+python setup.py install --prefix=`pwd`/../install
 cd ..
 
 cd cython
-python setup.py ../install --prefix=`pwd`/../install
+python setup.py install --prefix=`pwd`/../install
 cd ..
 
 cd scipy
-python setup.py ../install --prefix=`pwd`/../install
+python setup.py install --prefix=`pwd`/../install
 cd ..
 
 cd numexpr
-python setup.py ../install --prefix=`pwd`/../install
+python setup.py install --prefix=`pwd`/../install
 cd ..
 
-tar -pczf results.tar.gz ../install
+tar -pczf results.tar.gz install
 
 cd PyTables
-python setup.py ../install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 cd ..
-
+ 
 cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
 
