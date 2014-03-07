@@ -29,7 +29,7 @@ cd pyne
 echo "pwd and env"
 echo $PWD
 env
-python setup.py install --prefix=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib -DHDF5_ROOT=`pwd`/../install
+python setup.py install --prefix=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib -DHDF5_ROOT=`pwd`/../install -DCMAKE_PREFIX_PATH=`pwd`/../install
 
 cd scripts
 env
