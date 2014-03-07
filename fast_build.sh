@@ -25,16 +25,23 @@ export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
-cd nose
-python setup.py install --prefix=`pwd`/../install
-cd ../numpy
-python setup.py install --prefix=`pwd`/../install
-cd ../cython
-python setup.py install --prefix=`pwd`/../install
-cd ../scipy
-python setup.py install --prefix=`pwd`/../install
-cd ../numexpr
-python setup.py install --prefix=`pwd`/../install
+python get-pip.py --root `pwd`/install
+
+pip install --root `pwd`/../install nose
+pip install --root `pwd`/../install numpy
+pip install --root `pwd`/../install cython
+pip install --root `pwd`/../install scipy
+pip install --root `pwd`/../install numexpr
+# cd nose
+# python setup.py install --prefix=`pwd`/../install
+# cd ../numpy
+# python setup.py install --prefix=`pwd`/../install
+# cd ../cython
+# python setup.py install --prefix=`pwd`/../install
+# cd ../scipy
+# python setup.py install --prefix=`pwd`/../install
+# cd ../numexpr
+# python setup.py install --prefix=`pwd`/../install
 cd ../PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 
