@@ -3,9 +3,9 @@ set -e
 
 mkdir -p `pwd`/install/lib/python2.7/site-packages
 
-export PATH=`pwd`/install/bin:$PATH
+export PATH=`pwd`/install/bin:`pwd`/install/usr/local/bin:$PATH
 echo $PATH
-export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:`pwd`/install/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/install/lib/python2.7/site-packages/pyne/lib:$DYLD_FALLBACK_LIBRARY_PATH
 export C_INCLUDE_PATH=`pwd`/install/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
