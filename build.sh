@@ -24,20 +24,30 @@ make
 make install
 cd ..
 
-tar -pczf results.tar.gz install
-
 cd nose
 python setup.py install --prefix=`pwd`/../install
-cd ../numpy
-python setup.py install --prefix=`pwd`/../install
-cd ../cython
-python setup.py install --prefix=`pwd`/../install
-cd ../scipy
-python setup.py install --prefix=`pwd`/../install
-cd ../numexpr
-python setup.py install --prefix=`pwd`/../install
-cd ../PyTables
-python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+cd ..
+
+cd numpy
+python setup.py install --prefix=`pwd`/install
+cd ..
+
+cd cython
+python setup.py install --prefix=`pwd`/install
+cd ..
+
+cd scipy
+python setup.py install --prefix=`pwd`/install
+cd ..
+
+cd numexpr
+python setup.py install --prefix=`pwd`/install
+cd ..
+
+tar -pczf results.tar.gz install
+
+cd PyTables
+python setup.py install --prefix=`pwd`/install --hdf5=`pwd`/install
 cd ..
 
 cd pyne
