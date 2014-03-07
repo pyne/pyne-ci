@@ -24,6 +24,9 @@ make
 make install
 cd ..
 
+cd ..
+tar -pczf results.tar.gz install
+
 cd nose
 python setup.py install --prefix=`pwd`/../install
 cd ../numpy
@@ -36,9 +39,6 @@ cd ../numexpr
 python setup.py install --prefix=`pwd`/../install
 cd ../PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
-
-cd ..
-tar -pczf results.tar.gz install
 
 cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
