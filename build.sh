@@ -41,7 +41,7 @@ cd ../PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 
 cd pyne
-python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
 
 cd scripts
 env
