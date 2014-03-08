@@ -16,6 +16,8 @@ elif [[ $platform == 'darwin' ]]; then
     tar -xzf mac.tar.gz
 fi
 
+mv install-cp install
+
 PYINSTALL=`pwd`/install/lib/python2.7/site-packages
 
 mkdir -p $PYINSTALL

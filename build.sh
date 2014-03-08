@@ -27,6 +27,8 @@ make
 make install
 cd ..
 
+cp -r install install-cp
+
 # build all python
 cd nose
 python setup.py build
@@ -53,7 +55,7 @@ python setup.py build
 python setup.py install --prefix=`pwd`/../install --skip-build
 cd ..
 
-tar -pczf results.tar.gz install nose numpy cython scipy numexpr
+tar -pczf results.tar.gz install-cp nose numpy cython scipy numexpr
 
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
