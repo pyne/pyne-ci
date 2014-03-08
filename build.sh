@@ -1,7 +1,9 @@
 set -x
 set -e
 
-mkdir -p `pwd`/install/lib/python2.7/site-packages
+PYINSTALL=`pwd`/install/lib/python2.7/site-packages
+
+mkdir -p $PYINSTALL
 
 export PATH=`pwd`/install/bin:`pwd`/install/usr/local/bin:$PATH
 echo $PATH
@@ -12,6 +14,7 @@ export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
+# install libs
 cd hdf5-1.8.4
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
@@ -24,27 +27,49 @@ make
 make install
 cd ..
 
+# build all python
 cd nose
-python setup.py install --prefix=`pwd`/../install
+python setup.py build
 cd ..
 
 cd numpy
-python setup.py install --prefix=`pwd`/../install
+python setup.py build
 cd ..
 
 cd cython
-python setup.py install --prefix=`pwd`/../install
+python setup.py build
 cd ..
 
 cd scipy
-python setup.py install --prefix=`pwd`/../install
+python setup.py build
 cd ..
 
 cd numexpr
-python setup.py install --prefix=`pwd`/../install
+python setup.py build
 cd ..
 
-tar -pczf results.tar.gz install
+tar -pczf results.tar.gz install nose numpy cython scipy numexpr
+
+# install all python
+cd nose
+python setup.py install --prefix=`pwd`/../install --skip-build
+cd ..
+
+cd numpy
+python setup.py install --prefix=`pwd`/../install --skip-build
+cd ..
+
+cd cython
+python setup.py install --prefix=`pwd`/../install --skip-build
+cd ..
+
+cd scipy
+python setup.py install --prefix=`pwd`/../install --skip-build
+cd ..
+
+cd numexpr
+python setup.py install --prefix=`pwd`/../install --skip-build
+cd ..
 
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
