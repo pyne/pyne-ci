@@ -31,22 +31,27 @@ cp -r install install-cp
 
 # build all python
 cd nose
+python setup.py build
 python setup.py install --prefix=`pwd`/../install --skip-build
 cd ..
 
 cd numpy
+python setup.py build
 python setup.py install --prefix=`pwd`/../install --skip-build
 cd ..
 
 cd cython
+python setup.py build
 python setup.py install --prefix=`pwd`/../install --skip-build
 cd ..
 
 cd scipy
+python setup.py build
 python setup.py install --prefix=`pwd`/../install --skip-build
 cd ..
 
 cd numexpr
+python setup.py build
 python setup.py install --prefix=`pwd`/../install --skip-build
 cd ..
 
