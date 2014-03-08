@@ -7,3 +7,6 @@ platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
 project     = <a href="http://pyne.io/">PyNE</a>
 project_version = staging (nightly)
 description = Builds/Unit tests pyne[staging]
+notify = pyne-dev@googlegroups.com
+cron_hour = 0
+cron_minute = 15
