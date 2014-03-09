@@ -64,6 +64,15 @@ cd cython
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
+cd PyTaps-1.4
+python setup.py build
+cd ..
+cp -r PyTaps-1.4 build/
+
+cd PyTaps-1.4
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
 cd scipy
 python setup.py build
 cd ..

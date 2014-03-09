@@ -52,6 +52,10 @@ cd scipy
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
+cd PyTaps-1.4
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
 # build dependent python
 export HDF5_ROOT=`pwd`/install
 cd PyTables
