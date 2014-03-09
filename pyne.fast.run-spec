@@ -1,5 +1,5 @@
 run_type    = test
-inputs      = fetch/pyne-ci.git,fetch/fast_deps.scp,fetch/pyne.git,fetch/pytables.git
+inputs      = fetch/pyne-ci.git,fetch/fast_deps.scp,fetch/pyne.git,fetch/pytables.git,fetch/numpy.git
 x86_64_MacOSX8_remote_pre_declare = fast_build.sh
 x86_64_Ubuntu12_remote_pre_declare = fast_build.sh
 remote_task = run_test.sh

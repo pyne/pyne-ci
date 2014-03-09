@@ -16,7 +16,7 @@ elif [[ $platform == 'darwin' ]]; then
     tar -xzf mac.tar.gz
 fi
 
-mv install-cp install
+mv build/* .
 
 PYINSTALL=`pwd`/install/lib/python2.7/site-packages
 
@@ -31,27 +31,28 @@ export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
-# install all python
-cd nose
-python setup.py install --prefix=`pwd`/../install --skip-build
-cd ..
-
+# build broken python
 cd numpy
-python setup.py install --prefix=`pwd`/../install --skip-build
+python setup.py install --prefix=`pwd`/../install
 cd ..
 
-cd cython
-python setup.py install --prefix=`pwd`/../install --skip-build
-cd ..
-
-cd scipy
-python setup.py install --prefix=`pwd`/../install --skip-build
+cd nose
+python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd numexpr
-python setup.py install --prefix=`pwd`/../install --skip-build
+python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
+cd cython
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
+cd scipy
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
+# build dependent python
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 cd ..
