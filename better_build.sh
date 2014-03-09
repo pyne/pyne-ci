@@ -32,27 +32,27 @@ cp -r install install-cp
 # build all python
 cd nose
 python setup.py build
-python setup.py install --prefix=`pwd`/../install --skip-build
-cd ..
-
-cd numpy
-python setup.py build
-python setup.py install --prefix=`pwd`/../install --skip-build
+python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd cython
 python setup.py build
-python setup.py install --prefix=`pwd`/../install --skip-build
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
+cd numpy
+python setup.py build
+python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd scipy
 python setup.py build
-python setup.py install --prefix=`pwd`/../install --skip-build
+python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd numexpr
 python setup.py build
-python setup.py install --prefix=`pwd`/../install --skip-build
+python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 tar -pczf results.tar.gz install-cp nose numpy cython scipy numexpr
