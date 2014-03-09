@@ -53,7 +53,7 @@ python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 # build dependent python
-export HDF5_ROOT=`pwd`/../install
+export HDF5_ROOT=`pwd`/install
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 cd ..
