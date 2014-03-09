@@ -1,0 +1,3 @@
+method = url
+url = https://pypi.python.org/packages/source/P/PyTAPS/PyTAPS-1.4.tar.gz
+untar = true

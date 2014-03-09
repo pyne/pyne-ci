@@ -1,0 +1,9 @@
+run_type    = test
+inputs      = fetch/pyne-ci.git,fetch/nose.git,fetch/numpy.git,fetch/pytables.git,fetch/numexpr.hg,fetch/cython.git,fetch/pyne.git,fetch/scipy.git,fetch/hdf5.url,fetch/moab.url,fetch/pytaps.url
+x86_64_MacOSX8_remote_pre_declare = moab_build.sh
+x86_64_Ubuntu12_remote_pre_declare = moab_build.sh
+remote_task = run_test.sh
+platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
+project     = <a href="http://pyne.io/">PyNE</a>
+project_version = staging (nightly)
+description = Builds/Unit tests pyne[staging with moab]
