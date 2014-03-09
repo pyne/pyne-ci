@@ -25,7 +25,7 @@ mkdir -p $PYINSTALL
 export PATH=`pwd`/install/bin:`pwd`/install/usr/local/bin:$PATH
 echo $PATH
 export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:`pwd`/install/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/install/lib/python2.7/site-packages/pyne/lib:$DYLD_FALLBACK_LIBRARY_PATH
+export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/install/lib/python2.7/site-packages/pyne/lib:`pwd`/install/lib:$DYLD_FALLBACK_LIBRARY_PATH
 export C_INCLUDE_PATH=`pwd`/install/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
@@ -52,9 +52,9 @@ cd scipy
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
-cd PyTaps-1.4
-python setup.py install --skip-build --prefix=`pwd`/../install
-cd ..
+# cd PyTaps-1.4
+# python setup.py install --skip-build --prefix=`pwd`/../install
+# cd ..
 
 # build dependent python
 export HDF5_ROOT=`pwd`/install
