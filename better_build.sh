@@ -27,36 +27,55 @@ make
 make install
 cd ..
 
-cp -r install install-cp
+mkdir build
 
-# build all python
+cp -r install build/
+
+# build broken python
+cd numpy
+python setup.py install --prefix=`pwd`/../install
+cd ..
+
+# build not broken python
 cd nose
 python setup.py build
-python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
+cp -r nose build/
 
-cd cython
-python setup.py build
-python setup.py install --skip-build --prefix=`pwd`/../install
-cd ..
-
-cd numpy
-python setup.py build
-python setup.py install --skip-build --prefix=`pwd`/../install
-cd ..
-
-cd scipy
-python setup.py build
+cd nose
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd numexpr
 python setup.py build
+cd ..
+cp -r numexpr build/
+
+cd numexpr
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
-tar -pczf results.tar.gz install-cp nose numpy cython scipy numexpr
+cd cython
+python setup.py build
+cd ..
+cp -r cython build/
 
+cd cython
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
+cd scipy
+python setup.py build
+cd ..
+cp -r scipy build/
+
+cd scipy
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
+tar -pczf results.tar.gz build
+
+# build dependent python
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 cd ..
