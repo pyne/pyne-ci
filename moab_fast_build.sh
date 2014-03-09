@@ -53,12 +53,13 @@ python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 # build dependent python
+export HDF5_ROOT=`pwd`/../install
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 cd ..
  
 cd pyne
-python setup.py install --prefix=`pwd`/../install -- -DHDF5_ROOT=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
+python setup.py install --prefix=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
 
 cd scripts
 env
