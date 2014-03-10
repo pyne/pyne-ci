@@ -20,18 +20,12 @@ mkdir build
 cd hdf5-1.8.4
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
-cd ..
-cp -r hdf5-1.8.4 build
-cd hdf5-1.8.4
 make install
 cd ..
 
 cd moab-4.6.2
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
-cd ..
-cp -r moab-4.6.2 build
-cd moab-4.6.2
 make install
 cd ..
 
