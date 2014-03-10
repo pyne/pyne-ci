@@ -14,16 +14,24 @@ export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 
+mkdir build
+
 # install libs
 cd hdf5-1.8.4
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
+cd ..
+cp -r hdf5-1.8.4 build
+cd hdf5-1.8.4
 make install
 cd ..
 
 cd moab-4.6.2
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
+cd ..
+cp -r moab-4.6.2 build
+cd moab-4.6.2
 make install
 cd ..
 
