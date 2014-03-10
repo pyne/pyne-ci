@@ -8,11 +8,13 @@ mkdir -p $PYINSTALL
 export PATH=`pwd`/install/bin:`pwd`/install/usr/local/bin:$PATH
 echo $PATH
 export PYTHONPATH=`pwd`/install/lib/python2.7/site-packages:`pwd`/install/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/install/lib/python2.7/site-packages/pyne/lib:$DYLD_FALLBACK_LIBRARY_PATH
+export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/install/lib/python2.7/site-packages/pyne/lib:`pwd`/install/lib:$DYLD_FALLBACK_LIBRARY_PATH
 export C_INCLUDE_PATH=`pwd`/install/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
+
+mkdir build
 
 # install libs
 cd hdf5-1.8.4
@@ -21,37 +23,69 @@ make
 make install
 cd ..
 
-cd moab-4.6.2
-./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
-make
-make install
-cd ..
+# cd moab-4.6.2
+# ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
+# make
+# make install
+# cd ..
 
-cp -r install install-cp
+cp -r install build/
 
-# build all python
-cd nose
-python setup.py install --prefix=`pwd`/../install 
-cd ..
-
+# build broken python
 cd numpy
-python setup.py install --prefix=`pwd`/../install 
+python setup.py install --prefix=`pwd`/../install
 cd ..
 
-cd cython
-python setup.py install --prefix=`pwd`/../install 
+# build not broken python
+cd nose
+python setup.py build
 cd ..
+cp -r nose build/
 
-cd scipy
-python setup.py install --prefix=`pwd`/../install 
+cd nose
+python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd numexpr
-python setup.py install --prefix=`pwd`/../install 
+python setup.py build
+cd ..
+cp -r numexpr build/
+
+cd numexpr
+python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
-tar -pczf results.tar.gz install-cp nose numpy cython scipy numexpr
+cd cython
+python setup.py build
+cd ..
+cp -r cython build/
 
+cd cython
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
+# cd PyTAPS-1.4
+# python setup.py build
+# cd ..
+# cp -r PyTAPS-1.4 build/
+
+# cd PyTAPS-1.4
+# python setup.py install --skip-build --prefix=`pwd`/../install
+# cd ..
+
+cd scipy
+python setup.py build
+cd ..
+cp -r scipy build/
+
+cd scipy
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
+
+tar -pczf results.tar.gz build
+
+# build dependent python
+export HDF5_ROOT=`pwd`/install
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 cd ..
