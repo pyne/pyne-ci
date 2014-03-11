@@ -20,20 +20,16 @@ mkdir build
 cd hdf5-1.8.11
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
-# cd ..
-# cp -r hdf5-1.8.11 build/
-# cd hdf5-1.8.11
 make install
 cd ..
 
 cd moab-4.6.0
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
-# cd ..
-# cp -r moab-4.6.2 build/
-# cd moab-4.6.2
 make install
 cd ..
+
+cp -r install build
 
 # build broken python
 cd numpy
@@ -43,50 +39,50 @@ cd ..
 # build not broken python
 cd nose
 python setup.py build
-# cd ..
-# cp -r nose build/
+cd ..
+cp -r nose build/
 
-# cd nose
+cd nose
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd numexpr
 python setup.py build
-# cd ..
-# cp -r numexpr build/
+cd ..
+cp -r numexpr build/
 
-# cd numexpr
+cd numexpr
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd cython
 python setup.py build
-# cd ..
-# cp -r cython build/
+cd ..
+cp -r cython build/
 
-# cd cython
+cd cython
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd PyTAPS-1.4
 python setup.py build
-# cd ..
-# cp -r PyTAPS-1.4 build/
+cd ..
+cp -r PyTAPS-1.4 build/
 
-# cd PyTAPS-1.4
+cd PyTAPS-1.4
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd scipy
 python setup.py build
-# cd ..
-# cp -r scipy build/
+cd ..
+cp -r scipy build/
 
-# cd scipy
+cd scipy
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
-# tar -pczf results.tar.gz build
+tar -pczf results.tar.gz build
 
 # build dependent python
 cd PyTables
