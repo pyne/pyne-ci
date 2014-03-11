@@ -17,7 +17,7 @@ export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 mkdir build
 
 # install libs
-cd hdf5-1.8.9
+cd hdf5-1.8.11
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
 make install
