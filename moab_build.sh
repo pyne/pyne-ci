@@ -21,7 +21,7 @@ cd hdf5-1.8.11
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
 cd ..
-cp hdf5-1.8.11 build
+cp -r hdf5-1.8.11 build/
 cd hdf5-1.8.11
 make install
 cd ..
@@ -30,7 +30,7 @@ cd moab-4.6.2
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
 cd ..
-cp moab-4.6.2 build
+cp -r moab-4.6.2 build/
 cd moab-4.6.2
 make install
 cd ..
