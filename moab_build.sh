@@ -17,7 +17,7 @@ export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 mkdir build
 
 # install libs
-cd hdf5-1.8.4
+cd hdf5-1.8.9
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
 make install
@@ -28,8 +28,6 @@ cd moab-4.6.2
 make
 make install
 cd ..
-
-mkdir build
 
 cp -r install build/
 
