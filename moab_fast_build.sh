@@ -57,10 +57,10 @@ cd PyTAPS-1.4
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
-# build dependent python
-cd PyTables
-python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
-cd ..
+# # build dependent python
+# cd PyTables
+# python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
+# cd ..
  
 cd pyne
 python setup.py install --prefix=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
