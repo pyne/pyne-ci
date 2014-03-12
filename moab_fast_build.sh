@@ -53,9 +53,9 @@ cd scipy
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
-# cd PyTAPS-1.4
-# python setup.py install --skip-build --prefix=`pwd`/../install
-# cd ..
+cd PyTAPS-1.4
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
 
 # build dependent python
 cd PyTables
