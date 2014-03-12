@@ -30,6 +30,7 @@ export C_INCLUDE_PATH=`pwd`/install/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
+export HDF5_ROOT=`pwd`/install
 
 # build broken python
 cd numpy
@@ -52,19 +53,17 @@ cd scipy
 python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
-# cd PyTAPS-1.4
-# python setup.py install --skip-build --prefix=`pwd`/../install
-# cd ..
+cd PyTAPS-1.4
+python setup.py install --skip-build --prefix=`pwd`/../install
+cd ..
 
 # build dependent python
-export HDF5_ROOT=`pwd`/install
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 cd ..
  
 cd pyne
-python setup.py install --prefix=`pwd`/../install
-# -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
+python setup.py install --prefix=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
 
 cd scripts
 env
