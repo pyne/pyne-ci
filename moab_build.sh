@@ -13,11 +13,12 @@ export C_INCLUDE_PATH=`pwd`/install/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=`pwd`/install/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
+export HDF5_ROOT=`pwd`/install
 
 mkdir build
 
 # install libs
-cd hdf5-1.8.11
+cd hdf5-1.8.4
 ./configure --prefix=`pwd`/../install --enable-shared 
 make
 make install

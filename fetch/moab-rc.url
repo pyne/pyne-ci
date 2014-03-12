@@ -1,3 +1,0 @@
-method = url
-url = http://ftp.mcs.anl.gov/pub/fathom/moab-4.6.0.tar.gz
-untar = true
