@@ -6,4 +6,4 @@ remote_task = run_test.sh
 platforms   = x86_64_Ubuntu12,x86_64_MacOSX8,
 project     = <a href="http://pyne.io/">PyNE</a>
 project_version = staging (fast)
-description = Builds/Unit tests pyne[staging]
+description = Builds/Unit tests pyne[staging], <a href="http://gorgus.pyne.io/dashboard">dashboard</a>

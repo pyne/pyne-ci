@@ -5,9 +5,5 @@ x86_64_Ubuntu12_remote_pre_declare = build.sh
 remote_task = run_test.sh
 platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
 project     = <a href="http://pyne.io/">PyNE</a>
-project_version = staging (nightly)
+project_version = staging
 description = Builds/Unit tests pyne[staging]
-notify = pyne-dev@googlegroups.com
-notify_fail_only = true
-cron_hour = 0
-cron_minute = 15
