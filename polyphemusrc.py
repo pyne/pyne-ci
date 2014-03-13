@@ -25,6 +25,7 @@ batlab_fetch_file = 'fetch/pyne.git'
 batlab_run_spec = 'pyne.fast.run-spec'
 # Optional custom batlab submission command
 #batlab_submit_cmd = './submit.sh'
+batlab_jobs_cache = '/var/www/gorgus.pyne.io/jobs.cache'
 
 # Apache settings
 # Directory for log file, must be writeable and exist.
