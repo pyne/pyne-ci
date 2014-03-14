@@ -18,6 +18,8 @@ fi
 
 mv build/* .
 
+ls -R
+
 PYINSTALL=`pwd`/install/lib/python2.7/site-packages
 
 mkdir -p $PYINSTALL
