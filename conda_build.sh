@@ -9,7 +9,10 @@ fi
 
 cdir=`pwd`/anaconda
 export PATH=`pwd`/anaconda/bin:$PATH
-conda install conda-build jinja2 nose setuptools pytables hdf5 scipy patchelf
+conda install conda-build jinja2 nose setuptools pytables hdf5 scipy
+if [[ "$unamestr" == 'Linux' ]]; then
+    conda install patchelf
+fi
 cd conda-recipes
 pyneout=$(conda build --output pyne)
 conda build pyne
