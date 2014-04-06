@@ -1,2 +1,2 @@
 method = git
-git_repo = git://github.com/crbates/conda-recipes.git -b pyne
+git_repo = git://github.com/conda/conda-recipes.git
