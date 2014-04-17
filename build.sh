@@ -15,11 +15,14 @@ export LIBRARY_PATH=`pwd`/install/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/install/lib:$LD_LIBRARY_PATH
 export HDF5_ROOT=`pwd`/install
 
+#set locale
+python -c "import locale; locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')"
+
 mkdir build
 
 # install libs
 cd hdf5-1.8.4
-./configure --prefix=`pwd`/../install --enable-shared 
+./configure --prefix=`pwd`/../install --enable-shared
 make
 make install
 cd ..
@@ -89,7 +92,7 @@ tar -pczf results.tar.gz build
 cd PyTables
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
 cd ..
- 
+
 cd pyne
 python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install -- -DMOAB_INCLUDE_DIR=`pwd`/../install/include -DMOAB_LIBRARY=`pwd`/../install/lib
 
