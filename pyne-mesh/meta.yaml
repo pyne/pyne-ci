@@ -1,0 +1,45 @@
+package:
+  name: pyne
+  version: staging
+
+source:
+  fn: pyne.tar.gz
+  url : https://github.com/pyne/pyne/archive/staging.tar.gz
+
+requirements:
+  build:
+    - python
+    - cmake
+    - cython
+    - pytables
+    - hdf5
+    - numpy
+    - scipy
+    - pytaps
+  run:
+    - python
+    - hdf5
+    - numpy
+    - scipy
+    - pytables
+    - pytaps
+
+test:
+  requires:
+    - nose
+  imports:
+    - pyne
+    - pyne._utils
+    - pyne.ace
+    - pyne.data
+    - pyne.enrichment
+    - pyne.jsoncpp
+    - pyne.material
+    - pyne.nucname
+    - pyne.pyne_config
+    - pyne.xs.models
+
+
+about:
+  home: http://pyne.io/
+  license: BSD

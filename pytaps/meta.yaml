@@ -1,0 +1,14 @@
+package:
+  name: pytaps
+  version: 1.4
+
+source:
+  fn: pytaps.tar.gz
+  url: https://pypi.python.org/packages/source/P/PyTAPS/PyTAPS-1.4.tar.gz
+
+requirements:
+  build:
+    - moab
+  run:
+    - moab
+
