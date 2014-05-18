@@ -48,7 +48,11 @@ python setup.py install --skip-build --prefix=`pwd`/../install
 cd ..
 
 cd cython
-python setup.py install --skip-build --prefix=`pwd`/../install
+if [[ $platform == 'linux' ]]; then
+    python setup.py install --skip-build --prefix=`pwd`/../install
+elif [[ $platform == 'darwin' ]]; then
+    python setup.py install --prefix=`pwd`/../install
+fi
 cd ..
 
 cd scipy
