@@ -17,7 +17,6 @@ export DYLD_LIBRARY_PATH=`pwd`/anaconda/lib:$DYLD_LIBRARY_PATH
 export C_INCLUDE_PATH=`pwd`/anaconda/include:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=`pwd`/anaconda/include:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=`pwd`/anaconda/lib:$LIBRARY_PATH
-export LD_LIBRARY_PATH=`pwd`/anaconda/lib:$LD_LIBRARY_PATH
 export HDF5_ROOT=`pwd`/anaconda
 
 cdir=`pwd`/anaconda
@@ -52,15 +51,4 @@ nuc_data_make
 
 cd ../..
 
-#cd conda-recipes
-#pyneout=$(conda build --output pyne)
-#conda build pyne
-#conda install $pyneout
-#cd ../pyne/scripts
-#./nuc_data_make
-#cd ../..
-#cp $pyneout results.tar.gz
-
-#cd ../tests
-#$cdir/bin/nosetests
 exit $?
