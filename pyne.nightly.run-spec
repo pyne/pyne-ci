@@ -1,5 +1,5 @@
 run_type    = test
-inputs      = fetch/pyne.git,fetch/conda-recipes.git,fetch/miniconda_linux.url,fetch/miniconda_mac.url,fetch/pytaps.url,fetch/moab.url
+inputs      = fetch/pyne-ci.git,fetch/pyne.git,fetch/conda-recipes.git,fetch/miniconda_linux.url,fetch/miniconda_mac.url,fetch/pytaps.url,fetch/moab.url
 x86_64_MacOSX8_remote_pre_declare = conda_fast_build.sh
 x86_64_Ubuntu12_remote_pre_declare = conda_fast_build.sh
 x86_64_SL6_remote_pre_declare = conda_fast_build.sh
