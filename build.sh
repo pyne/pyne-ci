@@ -27,7 +27,7 @@ make
 make install
 cd ..
 
-cd moab-4.6.0
+cd moab-4.6.3
 ./configure --prefix=`pwd`/../install --enable-shared --with-hdf5=`pwd`/../install
 make
 make install
