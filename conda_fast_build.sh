@@ -26,7 +26,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
     conda install patchelf
 fi
 
-cd moab-4.6.0
+cd moab-4.6.3
 ./configure --prefix=`pwd`/../anaconda --enable-shared --with-hdf5=`pwd`/../anaconda
 make
 make install

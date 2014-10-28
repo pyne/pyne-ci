@@ -1,10 +1,11 @@
 run_type    = test
-inputs      = fetch/pyne-ci.git,fetch/pyne.git,fetch/conda-recipes.git,fetch/miniconda_linux.url,fetch/miniconda_mac.url,fetch/pytaps.url,fetch/moab.url
+inputs      = fetch/pyne-ci.git,fetch/pyne.git,fetch/conda-recipes.git,fetch/miniconda_linux.url,fetch/miniconda3_linux.url,fetch/miniconda_mac.url,fetch/pytaps.url,fetch/moab.url
 x86_64_MacOSX8_remote_pre_declare = conda_fast_build.sh
 x86_64_Ubuntu12_remote_pre_declare = conda_fast_build.sh
 x86_64_SL6_remote_pre_declare = conda_fast_build.sh
+x86_64_Ubuntu10_remote_pre_declare = conda3_build.sh
 remote_task = conda_test.sh
-platforms   = x86_64_MacOSX8, x86_64_Ubuntu12, x86_64_SL6
+platforms   = x86_64_MacOSX8, x86_64_Ubuntu12, x86_64_SL6, x86_64_Ubuntu10
 project     = <a href="http://pyne.io/">PyNE</a>
 project_version = staging (nightly)
 description = Builds/Unit tests pyne[staging], <a href="http://gorgus.pyne.io/dashboard">dashboard</a>
