@@ -18,8 +18,9 @@ nmi_list_recurring_runs
 ```
  - Then remove the associated Recurrence ID:
 ```sh
-nmi_rm 913202.0
+nmi_rm <recurrence id>
 ```
+The recurrence ID is typically a number like 913202.0 (the .0 is required)
  - Finally restart nightlies: 
 ```sh
  nmi_submit pyne.nightly.run-spec 
