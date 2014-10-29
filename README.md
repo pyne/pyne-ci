@@ -12,11 +12,11 @@ Post PR nightlies restart process
 cd pyne-ci
 git pull origin master
 ```
- - Determine the current recurring run # using:
+ - Determine the current recurrence id # using:
 ```sh
 nmi_list_recurring_runs
 ```
- - Then remove the associate Recurrence ID ex:
+ - Then remove the associated Recurrence ID:
 ```sh
 nmi_rm 913202.0
 ```
