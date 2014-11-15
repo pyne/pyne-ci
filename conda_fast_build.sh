@@ -1,12 +1,12 @@
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
-    chmod +x Miniconda-3.0.5-Linux-x86_64.sh
-    ./Miniconda-3.0.5-Linux-x86_64.sh -b -p `pwd`/anaconda
+    chmod +x Miniconda-3.7.0-Linux-x86_64.sh
+    ./Miniconda-3.7.0-Linux-x86_64.sh -b -p `pwd`/anaconda
 elif [[ "$unamestr" == 'Darwin' ]]; then
-    chmod +x Miniconda-3.0.5-MacOSX-x86_64.sh
-    ./Miniconda-3.0.5-MacOSX-x86_64.sh -b -p `pwd`/anaconda
+    chmod +x Miniconda-3.7.0-MacOSX-x86_64.sh
+    ./Miniconda-3.7.0-MacOSX-x86_64.sh -b -p `pwd`/anaconda
 elif [[ "$unamestr" == "CYGWIN_NT-6.1" ]]; then
-    Miniconda-3.0.5-Windows-x86.exe -b -p `pwd`/anaconda
+    Miniconda-3.7.0-Windows-x86.exe -b -p `pwd`/anaconda
 else
     echo $unamestr
 fi
