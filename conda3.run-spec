@@ -1,7 +1,0 @@
-run_type = build
-inputs = fetch/pyne-ci.git,fetch/pyne.git,fetch/conda-recipes.git,fetch/miniconda3_linux.url,fetch/miniconda3_mac.url
-x86_64_MacOSX8_remote_pre_declare = conda3_build.sh
-x86_64_Ubuntu12_remote_pre_declare = conda3_build.sh
-remote_task = conda_test.sh
-platforms = x86_64_MacOSX8,x86_64_Ubuntu12
-project = <a href="http://pyne.io/">PyNE</a>
