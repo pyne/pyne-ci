@@ -12,8 +12,7 @@ conda install nose pytables hdf5 scipy cython cmake
 
 # Install PyNE
 cd pyne
-python setup.py install --prefix="${CONDIR}" --hdf5="${CONDIR}" -- \
-  -DMOAB_INCLUDE_DIR="${CONDIR}/include" -DMOAB_LIBRARY="${CONDIR}/lib"
+python setup.py install --prefix="${CONDIR}" --hdf5="${CONDIR}" 
 cd scripts
 env
 nuc_data_make
