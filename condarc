@@ -1,0 +1,8 @@
+# This is a sample .condarc file
+# Channel locations override conda defaults, i.e., conda will
+# search *only* the channels listed here, in the order given. Use "defaults" to
+# automatically include all default channels. 
+channels:
+  - https://conda.binstar.org/pyne
+  - defaults
+
