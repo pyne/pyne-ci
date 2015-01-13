@@ -25,7 +25,7 @@ cd ..
 
 # Install PyNE
 cd pyne
-python setup.py install --prefix="${CONDIR}" --hdf5="${CONDIR}" -- \
+python setup.py install --build-type=debug --prefix="${CONDIR}" --hdf5="${CONDIR}" -- \
   -DMOAB_INCLUDE_DIR="${CONDIR}/include" -DMOAB_LIBRARY="${CONDIR}/lib"
 cd scripts
 env
