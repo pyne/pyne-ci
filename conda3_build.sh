@@ -9,6 +9,7 @@ source conda_env.sh
 
 # install deps
 conda install nose pytables hdf5 scipy cython cmake
+conda install -c https://conda.binstar.org/cyclus lapack
 
 # Install PyNE
 cd pyne
