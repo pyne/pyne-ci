@@ -9,7 +9,6 @@ source conda_env.sh
 
 # install deps
 conda install nose pytables hdf5 scipy cython cmake
-conda install requests=2.5.1  # temporary hack to fix broken binstar
 conda install -c https://conda.binstar.org/cyclus lapack
 
 # Install PyNE
