@@ -10,7 +10,8 @@ source conda_env.sh
 # install deps
 conda install nose pytables hdf5 scipy cython cmake
 #export CERT_FILE=$(ls $CONDIR/lib/python*/site-packages/requests/cacart.pem)
-binstar config --set ssl_options.certfile $CONDIR/ssl/cacart.pem
+#binstar config --set ssl_options.certfile $CONDIR/ssl/cacart.pem
+conda install requests=2.5.1
 conda install -c https://conda.binstar.org/cyclus lapack
 
 # Install PyNE
