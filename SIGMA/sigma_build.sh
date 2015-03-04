@@ -5,8 +5,8 @@ shopt -s expand_aliases
 
 # Install conda
 export MINICONDA_PYVER="2"
-../bin/conda-inst.sh
-source ../conda_env.sh
+./bin/conda-inst.sh
+source conda_env.sh
 
 # install deps
 conda install hdf5 autoconf automake libtool
