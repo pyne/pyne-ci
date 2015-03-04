@@ -1,9 +1,0 @@
-package:
-  name: cgm
-  version: 13.1
-
-source:
-  fn: cgm.tar.gz
-  url: https://bitbucket.org/fathomteam/cgm/get/cgm13.1.tar.gz
-
-

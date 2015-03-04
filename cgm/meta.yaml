@@ -1,0 +1,13 @@
+package:
+  name: cgm
+  version: 14.1
+
+source:
+  fn: cgm-14.1.tar.gz
+  url: ftp://ftp.mcs.anl.gov/pub/fathom/cgm-14.1.tar.gz
+
+requirements:
+  build:
+    - autoconf
+    - automake
+    - libtool
