@@ -1,8 +1,6 @@
-PATH=`pwd`/anaconda/bin:$PATH
+#!/bin/bash
+set -x
+set -e
+source conda_env.sh
 
-export DYLD_FALLBACK_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/python2.7/site-packages/itaps:$DYLD_FALLBACK_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/python2.7/site-packages/itaps:$DYLD_LIBRARY_PATH
-
-`pwd`/anaconda/bin/nosetests -w ./pyne/tests
-
-exit $?
+nosetests -w ./pyne-src/tests

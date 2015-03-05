@@ -3,31 +3,26 @@ set -x
 set -e
 
 # Install conda
-export MINICONDA_PYVER="2"
 ./bin/conda-inst.sh
 source conda_env.sh
 
 # install deps
-conda install nose pytables hdf5 scipy cython cmake
+conda install nose jinja pytables hdf5 scipy cython cmake moab
 
-#install MOAB
-cd moab-4.6.3
-./configure --prefix="${CONDIR}" --enable-shared --with-hdf5="${CONDIR}"
-make
-make install
-cd ..
+# Install PyTAPS on Python 2 only
+if [[ "$MINICONDA_PYVER" == "2" ]]; then
+    conda install pytaps
+fi
 
-# Install PyTAPS
-cd PyTAPS-1.4
-python setup.py build
-python setup.py install --skip-build --prefix="${CONDIR}"
-cd ..
+# build and install pyne conda package
+conda_build pyne
+vers=$(cat pyne/meta.yaml | grep version)
+read -a versArray <<< $vers
+conda install --use-local cymetric=${versArray[1]}
 
-# Install PyNE
-cd pyne
-python setup.py install --prefix="${CONDIR}" --hdf5="${CONDIR}" -- \
-  -DMOAB_INCLUDE_DIR="${CONDIR}/include" -DMOAB_LIBRARY="${CONDIR}/lib"
-cd scripts
-env
-nuc_data_make
-cd ../..
+# return packages
+gzip results.tar
+echo ""
+echo "Results Listing"
+echo "---------------"
+tar -ztvf results.tar.gz
