@@ -12,10 +12,10 @@ requirements:
     - numpy
 #    - cgm
     - moab
-    - lasso
+#    - lasso
   run:
     - python <3
     - numpy
 #    - cgm
     - moab
-    - lasso
+#    - lasso
