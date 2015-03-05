@@ -12,9 +12,10 @@ source conda_env.sh
 conda install hdf5 autoconf automake libtool
 
 # build and install SIGMA tools
-for x in "cgm moab lasso pytaps"; do
-  conda_build $x
-done
+conda_build cgm
+conda_build moab
+conda_build lasso
+conda_build pytaps
 
 # return packages
 gzip results.tar
