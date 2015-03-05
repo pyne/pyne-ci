@@ -4,7 +4,7 @@
 # Setup binstar
 which binstar > /dev/null 2>&1
 if [ $? -ne 0 ]; then
-  export PATH="${HOME}/miniconda/bin:${PATH}"
+  export PATH="${HOME}/miniconda3/bin:${PATH}"
 fi
 
 set -e

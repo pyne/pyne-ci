@@ -10,12 +10,8 @@ requirements:
   build:
     - python <3
     - numpy
-#    - cgm
     - moab
-#    - lasso
   run:
     - python <3
     - numpy
-#    - cgm
     - moab
-#    - lasso
