@@ -8,5 +8,6 @@ always_yes: True
 channels:
   - https://conda.binstar.org/pyne
   - asmeurer
+  - trent
   - defaults
 
