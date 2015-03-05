@@ -1,22 +1,25 @@
 package:
   name: pyne
-  version: 0.4.1
+  version: 0.5.0rc1
 
 source:
   fn: pyne.tar.gz
-  url : https://github.com/pyne/pyne/archive/0.4.1.tar.gz
+  url : https://github.com/pyne/pyne/archive/0.5.0-rc1.tar.gz
 
 requirements:
   build:
     - python
     - cmake
     - cython
+    - moab
     - pytables
     - hdf5
     - numpy
     - scipy
   run:
     - python
+    - moab
+    - pytaps # [py2k]
     - hdf5
     - numpy
     - scipy
@@ -25,16 +28,17 @@ requirements:
 test:
   requires:
     - nose
-  imports:
-    - pyne
-    - pyne._utils
-    - pyne.ace
-    - pyne.data
-    - pyne.enrichment
-    - pyne.jsoncpp
-    - pyne.material
-    - pyne.nucname
-    - pyne.pyne_config
+    - jinja2
+#  imports:
+#    - pyne
+#    - pyne._utils
+#    - pyne.ace
+#    - pyne.data
+#    - pyne.enrichment
+#    - pyne.jsoncpp
+#    - pyne.material
+#    - pyne.nucname
+#    - pyne.pyne_config
 
 
 about:
