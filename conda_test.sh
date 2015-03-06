@@ -4,11 +4,11 @@ set -e
 source conda_env.sh
 ls $BLD
 
-pyne_tar_dir="pyne-unichr"
+tar_dir="pyne-unichr"
 
 # Setup workdir
-if [ -d "${BLD}/work/${cycamore_tar_dir}" ]; then
-  export WORKDIR="${BLD}/work/${cycamore_tar_dir}"
+if [ -d "${BLD}/work/${tar_dir}" ]; then
+  export WORKDIR="${BLD}/work/${tar_dir}"
 else  
   export WORKDIR="${BLD}/work"
 fi
