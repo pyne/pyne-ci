@@ -2,7 +2,6 @@
 set -x
 set -e
 source conda_env.sh
-ls $BLD
 
 tar_dir="pyne-unichr"
 
@@ -13,4 +12,6 @@ else
   export WORKDIR="${BLD}/work"
 fi
 
-nosetests -w "${WORKDIR}/tests"
+cd "${WORKDIR}/tests"
+nosetests -vs
+cd
