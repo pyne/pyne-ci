@@ -18,7 +18,7 @@ fi
 conda_build pyne
 vers=$(cat pyne/meta.yaml | grep version)
 read -a versArray <<< $vers
-conda install --use-local cymetric=${versArray[1]}
+conda install --use-local pyne=${versArray[1]}
 
 # return packages
 gzip results.tar
