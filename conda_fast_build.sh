@@ -7,7 +7,7 @@ set -e
 source conda_env.sh
 
 # install deps
-conda install nose jinja pytables hdf5 scipy cython cmake moab
+conda install nose jinja2 pytables hdf5 scipy cython cmake moab
 
 # Install PyTAPS on Python 2 only
 if [[ "$MINICONDA_PYVER" == "2" ]]; then
