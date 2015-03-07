@@ -3,7 +3,7 @@ set -x
 set -e
 source conda_env.sh
 
-tar_dir="pyne-unichr"
+tar_dir="pyne-ci"
 
 # Setup workdir
 if [ -d "${BLD}/work/${tar_dir}" ]; then
