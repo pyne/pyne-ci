@@ -14,6 +14,8 @@ if [[ "${UNAME}" == 'Linux' ]]; then
 else
   ln -s $PREFIX/lib/libhdf5.9.dylib $PREFIX/lib/libhdf5.8.dylib
   ln -s $PREFIX/lib/libhdf5_hl.9.dylib $PREFIX/lib/libhdf5_hl.8.dylib
+  export CC=gcc
+  export CXX=g++
 fi
 
 ${PYTHON} setup.py install

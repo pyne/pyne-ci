@@ -11,7 +11,7 @@ source:
 requirements:
   build:
     - python
-    - gcc
+    - gcc  # [osx]
     - cmake
     - cython
     - moab
