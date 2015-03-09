@@ -14,6 +14,9 @@ if [[ "$MINICONDA_PYVER" == "2" ]]; then
     conda install pytaps
 fi
 
+echo "cat /etc/issue"
+echo "$(cat /etc/issue)"
+
 # build and install pyne conda package
 conda_build pyne
 vers=$(cat pyne/meta.yaml | grep version)
