@@ -16,11 +16,12 @@ conda install nose jinja2 pytables hdf5 scipy cython cmake moab
 
 # Install PyTAPS on Python 2 only
 if [[ "$MINICONDA_PYVER" == "2" ]]; then
-    conda install pytaps
+  conda install pytaps
 fi
 
-echo "cat /etc/issue"
-echo "$(cat /etc/issue)"
+if if [ "14" -gt "$GLIBC_MINOR_VERSION" ]; then
+  conda install glibc
+fi
 
 # build and install pyne conda package
 conda_build pyne
