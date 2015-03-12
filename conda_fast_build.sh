@@ -19,7 +19,7 @@ if [[ "$MINICONDA_PYVER" == "2" ]]; then
   conda install pytaps
 fi
 
-if if [ "14" -gt "$GLIBC_MINOR_VERSION" ]; then
+if [ "14" -gt "$GLIBC_MINOR_VERSION" ]; then
   conda install glibc
 fi
 
