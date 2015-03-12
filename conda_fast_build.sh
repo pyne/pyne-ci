@@ -6,6 +6,11 @@ set -e
 ./bin/conda-inst.sh
 source conda_env.sh
 
+# get glibc version, minorly apologetic for this.
+export LDD_VER="$(ldd --version)"
+export GLIBC_MAJOR_VERSION=$(python -c "print('''${LDD_VER}'''.splitlines()[0].split()[-1].split('.')[0])")
+export GLIBC_MINOR_VERSION=$(python -c "print('''${LDD_VER}'''.splitlines()[0].split()[-1].split('.')[1])")
+
 # install deps
 conda install nose jinja2 pytables hdf5 scipy cython cmake moab
 

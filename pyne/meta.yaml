@@ -12,6 +12,7 @@ requirements:
   build:
     - python
     - gcc  # [osx]
+    - glibc # [int(environ.get('GLIBC_MINOR_VERSION', 0)) < 14]
     - cmake
     - cython
     - moab
@@ -22,6 +23,7 @@ requirements:
     - scipy
   run:
     - python
+    - glibc # [int(environ.get('GLIBC_MINOR_VERSION', 0)) < 14]
     - moab
     - pytaps # [py2k]
     - hdf5

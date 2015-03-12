@@ -19,7 +19,6 @@ else
 fi
 
 ${PYTHON} setup.py install
-ldd --version
 nuc_data_make
 
 #
