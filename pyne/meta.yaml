@@ -12,7 +12,6 @@ requirements:
   build:
     - python
     - gcc  # [osx]
-    - glibc # [int(environ.get('GLIBC_MINOR_VERSION', 0)) < 14]
     - cmake
     - cython
     - moab
@@ -23,7 +22,6 @@ requirements:
     - scipy
   run:
     - python
-    - glibc # [int(environ.get('GLIBC_MINOR_VERSION', 0)) < 14]
     - moab
     - pytaps # [py2k]
     - hdf5
@@ -36,17 +34,6 @@ test:
   requires:
     - nose
     - jinja2
-#  imports:
-#    - pyne
-#    - pyne._utils
-#    - pyne.ace
-#    - pyne.data
-#    - pyne.enrichment
-#    - pyne.jsoncpp
-#    - pyne.material
-#    - pyne.nucname
-#    - pyne.pyne_config
-
 
 about:
   home: http://pyne.io/
