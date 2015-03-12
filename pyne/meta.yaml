@@ -1,6 +1,6 @@
 package:
   name: pyne
-  version: 0.5.0rc1
+  version: "0.5.0rc1"
 
 source:
   fn: pyne-src.tar.gz

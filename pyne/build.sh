@@ -2,8 +2,8 @@
 set -e
 
 unset LDFLAGS
-export LD_LIBRARY_PATH="$PREFIX/lib"
-export CMAKE_LIBRARY_PATH="$PREFIX/lib"
+export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
+export CMAKE_LIBRARY_PATH="$PREFIX/lib:$CMAKE_LIBRARY_PATH"
 export PATH="$PREFIX/bin:$PATH"
 export DYLD_FALLBACK_LIBRARY_PATH="$PREFIX/lib/cyclus:$PREFIX/lib"
 UNAME=$(uname)
