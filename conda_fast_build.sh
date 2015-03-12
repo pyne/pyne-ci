@@ -6,6 +6,10 @@ set -e
 ./bin/conda-inst.sh
 source conda_env.sh
 
+if [[ "$(uname)" != "Linux" ]]; then
+  conda install gcc
+fi
+
 # get glibc version, minorly apologetic for this.
 export LDD_VER="$(ldd --version)"
 export GLIBC_MAJOR_VERSION=$(python -c "print('''${LDD_VER}'''.splitlines()[0].split()[-1].split('.')[0])")
