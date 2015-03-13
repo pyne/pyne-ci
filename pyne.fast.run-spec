@@ -1,7 +1,7 @@
 run_type    = test
 inputs      = fetch/pyne-ci.git,fetch/miniconda3_linux.url,fetch/miniconda_linux.url,fetch/miniconda_mac.url,fetch/miniconda3_mac.url
 x86_64_MacOSX8_remote_pre_declare = conda_fast_py2k.sh
-x86_64_MacOSX10_remote_pre_declare = conda_fast_py3k.sh
+x86_64_MacOSX10_remote_pre_declare = conda_fast_py2k.sh
 x86_64_Ubuntu12_remote_pre_declare = conda_fast_py2k.sh
 x86_64_SL6_remote_pre_declare = conda_fast_py2k.sh
 x86_64_Ubuntu14_remote_pre_declare = conda_fast_py3k.sh
