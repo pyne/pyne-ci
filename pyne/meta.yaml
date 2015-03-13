@@ -22,6 +22,7 @@ requirements:
     - scipy
   run:
     - python
+    - gcc  # [osx]
     - moab
     - pytaps # [py2k]
     - hdf5
