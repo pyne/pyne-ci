@@ -12,9 +12,7 @@ source conda_env.sh
 conda install hdf5 autoconf automake libtool
 
 # build and install SIGMA tools
-conda_build cgm
 conda_build moab
-conda_build lasso
 conda_build pytaps
 
 # return packages
