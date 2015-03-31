@@ -12,6 +12,4 @@ else
   export WORKDIR="${BLD}/work"
 fi
 
-cd "${WORKDIR}/tests"
-nosetests -vs
-cd
+nosetests -vsw "${WORKDIR}/tests"
