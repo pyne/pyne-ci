@@ -1,0 +1,7 @@
+run_type    = build
+inputs      = fetch/pyne-ci.git,fetch/miniconda_linux.url,fetch/miniconda_mac.url
+remote_task = SIGMA/sigma_build.sh
+platforms   = x86_64_Ubuntu14, x86_64_MacOSX10
+project     = <a href="http://pyne.io/">PyNE</a>
+project_version = staging (fast)
+description = Builds PyNEs Sigma dependencies

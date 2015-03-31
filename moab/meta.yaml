@@ -1,0 +1,17 @@
+package:
+  name: moab
+  version: 4.8.0
+
+source:
+  fn: moab.tar.gz
+  url: ftp://ftp.mcs.anl.gov/pub/fathom/moab-4.8.0.tar.gz
+
+requirements:
+  build:
+    - autoconf
+    - automake
+    - libtool
+    - hdf5
+  run:
+    - hdf5
+
