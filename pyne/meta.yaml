@@ -1,12 +1,11 @@
 package:
   name: pyne
-  version: 0.5.0rc1
+  version: "0.5.0rc1"
 
 source:
-  fn: pyne-src.tar.gz
-  #url : https://github.com/pyne/pyne/archive/0.5.0-rc1.tar.gz
-  #url : https://github.com/scopatz/pyne/archive/unichr.tar.gz
-  url : https://github.com/scopatz/pyne/archive/ci.tar.gz
+  fn: pyne-src.tar.gz  # ["TRAVIS" not in environ]
+  url: https://github.com/pyne/pyne/archive/master.tar.gz  # ["TRAVIS" not in environ]
+  path: ..  # ["TRAVIS" in environ]
 
 requirements:
   build:
