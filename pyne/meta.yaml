@@ -8,6 +8,9 @@ source:
   url: https://github.com/pyne/pyne/archive/master.tar.gz  # ["TRAVIS" not in environ]
   path: ..  # ["TRAVIS" in environ]
 
+build:
+  number: 1
+
 requirements:
   build:
     - python
